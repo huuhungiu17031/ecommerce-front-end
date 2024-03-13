@@ -1,0 +1,73 @@
+.cps-navbar {
+    --width-icon: 20px;
+    --heigh-icon: 20px;
+    align-items: center;
+    display: flex;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    color: white;
+}
+
+.btn-menu {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background: hsla(0, 0%, 100%, 0.2);
+    border-radius: 10px;
+    height: 42px;
+    padding: 3px 5px;
+    position: relative;
+    color: white;
+    margin-right: 5px;
+
+    .title {
+        word-break: inherit;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    p {
+        color: white;
+    }
+
+    img {
+        display: block;
+        width: var(--width-icon);
+        height: var(--heigh-icon);
+        margin-right: 5px;
+    }
+}
+
+.region-layout {
+    display: flex;
+    flex-direction: column;
+
+    .check-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            margin-right: 5px;
+        }
+    }
+}
+
+.navbar-brand {
+    padding: 8px 12px;
+
+    img {
+        width: 161px;
+        height: 29.9px;
+    }
+}
+
+.btn-login {
+    flex-direction: column;
+}
