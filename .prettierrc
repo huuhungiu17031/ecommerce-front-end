@@ -8,5 +8,7 @@
   "insertPragma": false,
   "jsxSingleQuote": false,
   "useTabs": false,
-  "jsxBracketSameLine": true
+  "jsxBracketSameLine": true,
+  "bracketSpacing": true,
+  "bracketSameLine": true
 }
