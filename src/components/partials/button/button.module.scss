@@ -1,0 +1,66 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  --margin-svg: 5px;
+  --background-color: hsla(0, 0%, 100%, 0.2);
+  --length-icon-1: 20px;
+  --length-icon-2: 24px;
+  --menu-text-color: #ffffff;
+  --menu-text-font-size: 12px;
+  --logo-width: 161px;
+  --logo-height: 30px;
+}
+
+.logo {
+  padding: 8px 12px;
+  img {
+    width: var(--logo-width);
+    height: var(--logo-height);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background: var(--background-color);
+  border-radius: 10px;
+  height: 42px;
+  padding: 3px 5px;
+  color: var(--menu-text-color);
+  border: none;
+  cursor: pointer;
+  span {
+    text-align: start;
+    font-size: var(--menu-text-font-size);
+  }
+  svg {
+    width: var(--length-icon-1);
+    height: var(--length-icon-1);
+    margin-right: var(--margin-svg);
+  }
+}
+
+.about {
+  background: none;
+  line-height: 1.5;
+  + .about {
+    margin-left: 0.5rem;
+  }
+  svg {
+    width: var(--length-icon-2);
+    height: var(--length-icon-2);
+    margin-right: var(--margin-svg);
+  }
+  &:hover {
+    background: var(--background-color);
+  }
+}
+
+.login {
+  flex-direction: column;
+  background: var(--background-color);
+  svg {
+    width: var(--length-icon-1);
+    height: var(--length-icon-1);
+  }
+}

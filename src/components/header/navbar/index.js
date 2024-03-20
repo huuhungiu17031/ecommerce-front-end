@@ -1,53 +1,37 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './navbar.module.scss'
-import classNames from 'classnames/bind'
-import { NavLink } from 'react-router-dom'
-const cx = classNames.bind(styles)
-import images from '~/assets/images'
+import styles from './navbar.module.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
+import images from '~/assets/images';
 import {
-  faCartShopping,
-  faChevronDown,
+  faBagShopping,
   faLocationDot,
   faMagnifyingGlass,
   faPhone,
   faTableList,
+  faTruck,
   faUser,
   faXmark,
-} from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
-import Tippy from '@tippyjs/react/headless'
-import PopperWrapper from '~/components/partials/popper-wrapper'
-
+} from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import Tippy from '@tippyjs/react/headless';
+import PopperWrapper from '~/components/partials/popper-wrapper';
+import Button from '~/components/partials/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Navbar() {
-  const [region, setRegion] = useState(null)
-  const [searchResult, setSearchResult] = useState([])
+  const [region, setRegion] = useState(null);
+  const [searchResult, setSearchResult] = useState([]);
 
   return (
     <div className={cx(['cps-container'])}>
       <nav className={cx('cps-navbar')}>
-        <NavLink className={cx('navbar-brand')} to={'/'}>
-          <img src={images.logo} alt="logo.svg" />
-        </NavLink>
+        <Button to="/" alt="logo" logo={images.logo}></Button>
+        <Button nav icon={faTableList}>
+          Danh mục
+        </Button>
 
-        <NavLink className={cx('btn-menu')}>
-          <FontAwesomeIcon icon={faTableList} />
-          <p>Danh Mục</p>
-        </NavLink>
-
-        <NavLink className={cx('btn-menu')}>
-          <FontAwesomeIcon icon={faLocationDot} />
-          <div className={cx('region-layout')}>
-            <div className={cx('check-price')}>
-              <p>Xem giá tại</p>
-              <FontAwesomeIcon icon={faChevronDown} style={{ width: '10px', height: '10px' }} />
-            </div>
-            <div className={cx('region-name')}>{region && region ? <p>{region}</p> : <p>Hồ Chí Minh</p>}</div>
-          </div>
-        </NavLink>
-
+        <div className={cx('flex-grow')}></div>
         {/* SEARCH BAR */}
-
-        <Tippy
+        {/* <Tippy
           visible={searchResult.length > 0}
           interactive={true}
           placement={'bottom-start'}
@@ -69,10 +53,35 @@ function Navbar() {
               </button>
             </form>
           </div>
-        </Tippy>
-
+        </Tippy> */}
         {/* END SEARCH BAR */}
-        <div style={{ flexGrow: 1 }}></div>
+        <Button nav about icon={faPhone}>
+          Gọi mua hàng <br /> 1800.2097
+        </Button>
+        <Button nav about icon={faLocationDot}>
+          Cửa hàng <br /> gần bạn
+        </Button>
+        <Button nav about icon={faTruck}>
+          Tra cứu <br /> đơn hàng
+        </Button>
+        <Button nav about icon={faBagShopping}>
+          Giỏ <br /> hàng
+        </Button>
+        <Button nav about login icon={faUser}>
+          Đăng nhập
+        </Button>
+        {/* <NavLink className={cx('btn-menu')}>
+          <FontAwesomeIcon icon={faLocationDot} />
+          <div className={cx('region-layout')}>
+            <div className={cx('check-price')}>
+              <p>Xem giá tại</p>
+              <FontAwesomeIcon icon={faChevronDown} style={{ width: '10px', height: '10px' }} />
+            </div>
+            <div className={cx('region-name')}>{region && region ? <p>{region}</p> : <p>Hồ Chí Minh</p>}</div>
+          </div>
+        </NavLink> */}
+
+        {/* <div style={{ flexGrow: 1 }}></div>
         <NavLink className={cx('btn-menu')}>
           <FontAwesomeIcon icon={faPhone} />
           <div>
@@ -103,10 +112,10 @@ function Navbar() {
           </div>
         </NavLink>
 
-        {/* <BoxSearch /> */}
+        <BoxSearch /> */}
       </nav>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
